@@ -1,0 +1,47 @@
+@use "../base";
+@use "./mixins.css";
+.main{
+    border:2px green solid;
+    
+    
+button{
+    @include mixins(center,center,row, wrap);
+    // gap:2em;
+    padding:.7em 1.8em;
+    border-radius: 5px;
+    border:none;
+    width:10%;
+    margin:.2em;
+    // box-shadow:1em 1em .1em grey;
+    background:#191919;
+    color:#A160FB;
+    
+    
+}
+// input{
+//     margin: 3em 2em;
+//     // padding:1em 12.9em;
+//     border-radius: 5px;
+//     outline:none;
+
+// }
+.numerics{
+    margin:3em 2em;
+    
+}
+// .symbol{
+    // background:skyblue;
+    // color:black;
+// }
+.output{
+    @include mixins(space-around,flex-end,column, wrap);
+    .first-part{
+        font-size:2rem;
+        color:yellow;
+    }
+    .second-part{
+        font-size:3rem;
+        color:blue;
+    }
+}
+}
