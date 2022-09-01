@@ -35,14 +35,44 @@ function appendNumber(number) {
 }
 
 function selectOperation (operator) {
-
+  if (this.second === '') return
+  if (this.first !== '') {
+    this.compute()
+  }
+  this.operation = operation
+  this.previousOperand = this.currentOperand
+  this.currentOperand = ''
 
 }
+
 
 function compute() {
-
-
+  let result
+  const prev = parseFloat(this.first)
+  const current = parseFloat(this.second)
+  if (isNaN(prev) || isNaN(current)) return
+  switch (this.operation) {
+    case '+':
+      result = prev + current
+      break
+    case '-':
+      result = prev - current
+      break
+    case '*':
+      result = prev * current
+      break
+    case '÷':
+      result = prev / current
+      break
+    default:
+      return
+  }
+  this.second = result
+  this.operation = undefined
+  this.first= ''
 }
+
+
  function update() {
         this.secondTextElement.innerText =
           this.displayNumber(this.second)
@@ -55,12 +85,31 @@ function compute() {
       }
 
  function displayNUmber(number){
-
+  const stringNumber = number.toString()
+  const integerDigits = parseFloat(stringNumber.split('.')[0])
+  const decimalDigits = stringNumber.split('.')[1]
+  let integerDisplay
+  if (isNaN(integerDigits)) {
+    integerDisplay = ''
+  } else {
+    integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 })
+  }
+  if (decimalDigits != null) {
+    return `${integerDisplay}.${decimalDigits}`
+  } else {
+    return integerDisplay
+  }
 
  }     
     
 
-
+ function displayNumber(number) {
+  if (decimalDigits != null) {
+        return `${integerDisplay}.${decimalDigits}`
+      } else {
+        return integerDisplay
+      }
+    }
 
 
 
