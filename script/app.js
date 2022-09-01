@@ -23,7 +23,7 @@ console.log(equal)
 function erase () {
 this.first=""
 this.second=""
-this.operator="undefined"
+this.operation="undefined"
 
 }
 
@@ -34,19 +34,19 @@ function appendNumber(number) {
 
 }
 
-function selectOperation (operator) {
+function selectOperation (operation) {
   if (this.second === '') return
   if (this.first !== '') {
-    this.compute()
+    this.computation()
   }
-  this.operation = operation
-  this.previousOperand = this.currentOperand
-  this.currentOperand = ''
+  this.operation= operation
+  this.first = this.second
+  this.second= ''
 
 }
 
 
-function compute() {
+function computation() {
   let result
   const prev = parseFloat(this.first)
   const current = parseFloat(this.second)
@@ -119,8 +119,9 @@ const calculation= new calculator(firstTextElement, secondTextElement)
 
 numerics.forEach(button=>{
 button.addEventListener("click", () => {
-calculation.appendNumber(button.innerText)
-calculation.update
+// calculation.appendNumber(button.innerText)
+console.log(calculation)
+// calculation.update
 
 
 } )
@@ -128,14 +129,15 @@ calculation.update
 
 operation.forEach(button=>{
     button.addEventListener("click", ()=>{
-      calculation.selectOperation(button.innerText)  
+      // calculation.selectOperation(button.innerText)  
+      console.log(calculation)
       calculation.update
       
     })
 })
 
 clearing.addEventListener("click", button=>{
-calculation.clear(button.innerText)
+calculation.erase(button.innerText)
 calculation.update
 
 
