@@ -1,11 +1,4 @@
 console.log("Hello World");
-class calculator{
-    constructor(firstTextElement, secondTextElement){
-    this.firstTextElement=firstTextElement
-    this.secondTextElement=secondTextElement
-    this.erase=erase()
-}
-}
 
 const firstTextElement=document.querySelector("[data-first]")
 console.log(firstTextElement)
@@ -20,12 +13,23 @@ console.log(clearing);
 const equal=document.querySelector("[data-equal]")
 console.log(equal)
 
+class calculator{
+    constructor(firstTextElement, secondTextElement){
+    this.firstTextElement=firstTextElement
+    this.secondTextElement=secondTextElement
+    this.erase=erase()
+}
+}
+
+
 function erase () {
 this.first=""
 this.second=""
 this.operation="undefined"
 
 }
+
+const calculation= new calculator(firstTextElement, secondTextElement)
 
 function appendNumber(number) {
   if (number === '.' && this.second.includes('.')) return
@@ -84,6 +88,7 @@ function computation() {
         }
       }
 
+
  function displayNUmber(number){
   const stringNumber = number.toString()
   const integerDigits = parseFloat(stringNumber.split('.')[0])
@@ -111,25 +116,17 @@ function computation() {
       }
     }
 
-
-
-
-const calculation= new calculator(firstTextElement, secondTextElement)
-
-
 numerics.forEach(button=>{
 button.addEventListener("click", () => {
-// calculation.appendNumber(button.innerText)
+calculation.appendNumber(button.innerText)
 console.log(calculation)
-// calculation.update
-
-
+calculation.update
 } )
 })
 
 operation.forEach(button=>{
     button.addEventListener("click", ()=>{
-      // calculation.selectOperation(button.innerText)  
+      calculation.selectOperation(button.innerText)  
       console.log(calculation)
       calculation.update
       
@@ -141,9 +138,7 @@ calculation.erase(button.innerText)
 calculation.update
 
 
-    }
-
-    
+    } 
 )
 
 equal.addEventListener(

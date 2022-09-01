@@ -16,9 +16,10 @@ body {
 }
 
 .main {
-  box-shadow: 2px 2px 2px green;
+  border: 2px solid red;
   width: 80%;
-  height: 100vh;
+  margin-top: 5em;
+  border-radius: 1em;
 }
 
 button {
@@ -30,6 +31,7 @@ button {
   margin: 0.2em;
   background: #191919;
   color: #A160FB;
+  box-shadow: 0.5em 0.5em 1em grey;
 }
 
 .numerics {
@@ -42,6 +44,10 @@ button {
   justify-content: space-around;
   align-items: flex-end;
   flex-direction: column;
+  background: blue;
+  width: 100%;
+  text-align: end;
+  border-radius: 1em;
 }
 .output .first-part {
   font-size: 2rem;
@@ -49,5 +55,5 @@ button {
 }
 .output .second-part {
   font-size: 3rem;
-  color: blue;
+  color: orange;
 }/*# sourceMappingURL=styles.css.map */
