@@ -50,3 +50,9 @@ button{
         color:orange;
     }
 }
+
+@media (max-width: 414px) {
+    .container {
+      width: 100%;
+    }
+}

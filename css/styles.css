@@ -55,4 +55,10 @@ button {
 .output .second-part {
   font-size: 3rem;
   color: orange;
+}
+
+@media (max-width: 414px) {
+  .container {
+    width: 100%;
+  }
 }/*# sourceMappingURL=styles.css.map */
